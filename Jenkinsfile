@@ -13,7 +13,6 @@ pipeline {
             agent { 
               docker{ 
                 image 'alpine:latest' 
-                label 'for-branch-a'
               }
             }
             steps {
@@ -24,7 +23,6 @@ pipeline {
           agent { 
             docker { 
               image 'alpine:latest' 
-              label 'for-branch-b'
             }
           }
           steps {
