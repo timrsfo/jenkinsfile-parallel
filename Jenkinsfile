@@ -10,13 +10,15 @@ pipeline {
       failFast true
       parallel {
         stage('Branch A') {
-            agent { node { label "for-branch-a" } }
+            agent { 
+              docker{ image 'alpine:latest' {label "for-branch-a" } }
             steps {
               echo "On Branch A"
             }
         }
         stage('Branch B') {
-          agent { node { label "for-branch-b" } }
+          agent { 
+            docker {image 'alpine:latest' { label "for-branch-b" } }
           steps {
             echo "On Branch B"
           }
