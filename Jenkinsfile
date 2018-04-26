@@ -11,7 +11,7 @@ pipeline {
       parallel {
         stage('Branch A') {
             agent { 
-              docker{ image 'alpine:latest' { label "for-branch-a" } }
+              docker{ image 'alpine:latest' }
             }
             steps {
               echo "On Branch A"
@@ -19,7 +19,7 @@ pipeline {
         }
         stage('Branch B') {
           agent { 
-            docker { image 'alpine:latest' { label "for-branch-b" } }
+            docker { image 'alpine:latest' }
           }
           steps {
             echo "On Branch B"
