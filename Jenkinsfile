@@ -12,21 +12,23 @@ pipeline {
         stage('Branch A') {
             agent { 
               docker{ 
-                image 'alpine:latest' 
+                image 'maven:3.3.9-jdk-8-alpine'
               }
             }
             steps {
               echo "On Branch A"
+              sh 'mvn -v'
             }
         }
         stage('Branch B') {
           agent { 
             docker { 
-              image 'alpine:latest' 
+              image 'maven:3.3.9-jdk-8-alpine'
             }
           }
           steps {
             echo "On Branch B"
+            sh 'mvn -v'
           }
         }
       }
