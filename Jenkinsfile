@@ -12,7 +12,7 @@ pipeline {
         stage('Branch A') {
             agent { 
               docker{ 
-                image 'maven:3.3.9-jdk-8-alpine'
+                image 'maven:3.5.3-jdk-8-alpine'
               }
             }
             steps {
@@ -22,7 +22,7 @@ pipeline {
         stage('Branch B') {
           agent { 
             docker { 
-              image 'maven:3.3.9-jdk-8-alpine'
+              image 'maven:3.5.3-jdk-8-alpine'
             }
           }
           steps {
