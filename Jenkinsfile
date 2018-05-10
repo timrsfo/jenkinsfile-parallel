@@ -17,6 +17,7 @@ pipeline {
             }
             steps {
               sh 'mvn -v'
+              echo "Branch A"
             }
         }
         stage('Branch B') {
@@ -27,6 +28,7 @@ pipeline {
           }
           steps {
               sh 'mvn -v'
+              echo "Branch B"
           }
         }
       }
